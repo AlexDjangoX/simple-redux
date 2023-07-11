@@ -9,6 +9,7 @@ export default function Page() {
     <div className='dark:bg-slate-900'>
       <Nav />
       <Counter />
+      
     </div>
   );
 }

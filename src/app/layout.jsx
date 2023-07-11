@@ -1,5 +1,3 @@
-
-
 import './globals.css';
 import Provider from './providers/Provider';
 import{ ReduxProvider }from '../redux/ReduxProvider'

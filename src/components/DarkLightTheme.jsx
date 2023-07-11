@@ -4,14 +4,19 @@ import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
 
+import icons from '../../public/assets/outline/index.js';
+
+import logos from '../../public/assets/logos/index.js'
+
+
 const themeConfig = {
   dark: {
-    iconSrc: "/assets/icons/sun.svg",
+    iconSrc:icons['sun'],
     alt: "dark-mode-sun",
     hoverClass: "hover:bg-red-700",
   },
   light: {
-    iconSrc: "/assets/icons/moon.svg",
+    iconSrc: icons['moon'],
     alt: "dark-mode-moon",
     hoverClass: "hover:bg-blue-700",
   },
@@ -29,7 +34,8 @@ const DarkLightTheme = () => {
   const { iconSrc, alt, hoverClass } = themeConfig[currentTheme];
 
   return (
-    <div className="flex p-5">
+    <div className="flex  p-5">
+    
       <button
         className={`flex justify-center align-center bg-black ${hoverClass} w-14 h-14 rounded-full`}
         onClick={() => setTheme(currentTheme === 'dark' ? 'light' : 'dark')}
