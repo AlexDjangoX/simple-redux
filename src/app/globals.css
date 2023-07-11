@@ -25,3 +25,13 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.dot {
+  transition: all 0.3s ease-out;
+}
+
+input:checked ~ .dot {
+  transform: translateX(20px);
+  background-color: #ffffff; 
+}
+

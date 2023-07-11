@@ -4,12 +4,15 @@ import Image from 'next/image';
 import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment, reset } from '@/redux/features/counterSlice';
 import { useGetUsersQuery } from '@/redux/services/userApi';
+import Loader from '../components/Loader'
 
 export default function Counter() {
   const count = useSelector((state) => state.counterReducer.value);
   const dispatch = useDispatch();
 
   const { isLoading, isFetching, data, error } = useGetUsersQuery(null);
+
+
 
   return (
     <main className=" max-w-1200 mx-auto p-2">
@@ -40,7 +43,10 @@ export default function Counter() {
       {error ? (
         <p>Oh no, there was an error</p>
       ) : isLoading || isFetching ? (
-        <p>Loading...</p>
+        <div className='flex justify-center'>
+        <Loader/>
+        </div>
+        
       ) : data ? (
         <div className="flex flex-wrap justify-center m-24 ">
           {data.map((user) => (

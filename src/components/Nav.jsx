@@ -7,9 +7,11 @@ import logos from '../../public/assets/logos/index.js';
 const Nav = () => {
   return (
     <>
-      <div className="flex">
+      <div className="flex justify-center bg-gray-700 dark:bg-gray-600">
         <DarkLightTheme />
-        <div className="flex p-4 space-x-8">
+        
+      </div>
+      <div className="flex p-4 space-x-8">
           {Object.values(logos).map((logo, index) => (
             <div key={index}>
               <Image
@@ -22,7 +24,6 @@ const Nav = () => {
             </div>
           ))}
         </div>
-      </div>
     </>
   );
 };
