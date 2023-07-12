@@ -1,4 +1,3 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: 'class',
   content: [
@@ -20,7 +19,7 @@ module.exports = {
         natural4: '#fafafb',
         natural5: '#f5f5f8',
         naturalColor: '#44444f',
-        naturalColor6:'#e2e2ea',
+        naturalColor6: '#e2e2ea',
         naturalGray: '#CCCCCC',
         primary: '#0bab7c',
         secondary1: '#c7f4c2',
@@ -29,7 +28,22 @@ module.exports = {
         secondary4: '#ffbbd7',
         white: '#ffffff',
       },
+      fontFamily: {
+        manrope: ['Manrope', 'sans-serif'],
+      },
+      fontWeight: {
+        thin: 100,
+        extralight: 200,
+        light: 300,
+        normal: 400,
+        medium: 500,
+        semibold: 600,
+        bold: 700,
+        extrabold: 800,
+        black: 900,
+      },
     },
   },
+  variants: {},
   plugins: [],
 };
