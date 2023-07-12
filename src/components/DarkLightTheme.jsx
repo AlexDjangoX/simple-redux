@@ -1,25 +1,25 @@
-'use client';
+'use client'
 
-import Image from 'next/image';
-import { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
+import Image from 'next/image'
+import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 
-import icons from '../../public/assets/outline/index.js';
+import icons from '../../public/assets/outline/index.js'
 
 const DarkLightTheme = () => {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
+  const { systemTheme, theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
 
-  useEffect(() => setMounted(true), []);
+  useEffect(() => setMounted(true), [])
 
-  if (!mounted) return null;
+  if (!mounted) return null
 
-  const currentTheme = theme === 'system' ? systemTheme : theme;
+  const currentTheme = theme === 'system' ? systemTheme : theme
 
   return (
     <div className="flex justify-center align-center p-5">
       <div className="pr-2">
-        <Image src={icons['sun']} alt={'icon-sun'} height={20} width={20} />
+        <Image src={icons.sun} alt={'icon-sun'} height={20} width={20} />
       </div>
       <label htmlFor="toggle-button" className="flex items-center cursor-pointer">
         <div className="relative">
@@ -34,9 +34,9 @@ const DarkLightTheme = () => {
         </div>
         <div className="ml-3 text-gray-700 font-medium" />
       </label>
-      <Image src={icons['moon']} alt={'icon-moon'} height={20} width={20} />
+      <Image src={icons.moon} alt={'icon-moon'} height={20} width={20} />
     </div>
-  );
-};
+  )
+}
 
-export default DarkLightTheme;
+export default DarkLightTheme

@@ -6,7 +6,7 @@ import Counter from '@/components/Counter';
 
 export default function Page() {
   return (
-    <div className='dark:bg-primary'>
+    <div className='dark:bg-primary '>
       <Nav />
       <Counter />
       
