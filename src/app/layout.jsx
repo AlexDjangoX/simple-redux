@@ -1,24 +1,36 @@
 import './globals.css';
-import Provider from './providers/Provider';
-import{ ReduxProvider }from '../redux/ReduxProvider'
+import { Dancing_Script, Manrope } from 'next/font/google';
 
+import Provider from './providers/Provider';
+import { ReduxProvider } from '../redux/ReduxProvider';
+import Nav from '@/components/Nav';
+
+const manrope = Manrope({
+  subsets: ['latin'],
+  weight: ['variable'],
+});
+
+const dancingScript = Dancing_Script({
+  subsets: ['latin'],
+  weight: ['variable'],
+});
 
 export const metadata = {
   title: 'redux',
   description: 'Simple css Tailwind, redux application',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body className={manrope.className}>
         <ReduxProvider>
           <Provider>
-           {children}
+            <Nav />
+            {children}
           </Provider>
         </ReduxProvider>
       </body>
     </html>
-  )
+  );
 }
-

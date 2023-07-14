@@ -1,7 +1,7 @@
 import { Formik, Field, ErrorMessage, Form } from 'formik';
 import * as Yup from 'yup';
 
-import Button from '@/components/Button';
+// import Button from '@/components/Button';
 
 const SearchQueryForm = ({ setSearchQuery }) => {
   const initialValues = {
@@ -64,11 +64,7 @@ const SearchQueryForm = ({ setSearchQuery }) => {
             <Field type="text" id="country" name="country" />
             <ErrorMessage name="country" component="div" />
           </div>
-          {/* <Button
-            classStyles="bg-secondary3 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4"
-            type="submit"
-            btnName="Search"
-          /> */}
+
           <button type="submit">Search</button>
         </Form>
       </Formik>

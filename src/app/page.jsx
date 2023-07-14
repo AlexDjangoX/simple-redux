@@ -1,15 +1,11 @@
 'use client';
 
 import './globals.css';
-import Nav from '@/components/Nav';
-import Counter from '@/components/Counter';
-import SearchQuery from '@/app/search/SearchQuery';
+import SearchQuery from '@/components/SearchQuery';
 
 export default function Page() {
   return (
-    <div className="dark:bg-primary ">
-      <Nav />
-      <Counter />
+    <div className="bg-natural4 dark:bg-darkBG1 ">
       <SearchQuery />
     </div>
   );

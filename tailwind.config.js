@@ -10,7 +10,7 @@ module.exports = {
       colors: {
         black: '#000700',
         black1: '#171725',
-        blackBG: '#13131a',
+        darkBG1: '#13131a',
         blackBG2: '#1c1c24',
         blackBG3: '#21212b',
         natural: '#f4f4f4',
@@ -18,6 +18,7 @@ module.exports = {
         natural3: '#696974',
         natural4: '#fafafb',
         natural5: '#f5f5f8',
+        natural6: '#92929D',
         naturalColor: '#44444f',
         naturalColor6: '#e2e2ea',
         naturalGray: '#CCCCCC',

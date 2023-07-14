@@ -32,6 +32,4 @@ body {
 
 input:checked ~ .dot {
   transform: translateX(20px);
-  background-color: #ffffff; 
 }
-

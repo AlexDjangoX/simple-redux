@@ -5,9 +5,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { decrement, increment, reset } from '@/redux/features/counterSlice';
 import { useGetUsersQuery } from '@/redux/services/userApi';
 import Loader from '../components/Loader';
+import { FaBeer, FaYoutube } from 'react-icons/fa';
 
 import Button from '@/components/Button';
-
+import logos from '../../public/assets/logos';
 export default function Counter() {
   const count = useSelector((state) => state.counterReducer.value);
   const dispatch = useDispatch();
@@ -16,6 +17,23 @@ export default function Counter() {
 
   return (
     <main className="p-4">
+      <FaBeer size="2em" color="orange" className="m-4 hover:fill-blue-700" />
+      <FaYoutube size="2em" color="orange" className="m-4" />
+
+      <div className="flex space-x-8 p-4">
+        {Object.values(logos).map((logo, index) => (
+          <div key={index}>
+            <Image
+              src={logo}
+              alt={`Logo ${index}`}
+              width={32}
+              height={32}
+              className="inline-block"
+            />
+          </div>
+        ))}
+      </div>
+
       <div className="mb-4 mt-16 flex justify-center ">
         <Button
           classStyles="bg-secondary3 hover:bg-blue-700 text-white font-bold py-2 px-4 mr-4"

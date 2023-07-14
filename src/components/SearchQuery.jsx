@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 import { useGetSearchResultsQuery } from '@/redux/services/jobApi';
 import SearchQueryForm from '@/components/SearchQueryForm';
+import DateDisplay from '@/components/DateDisplay';
 
 function SearchQuery() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -16,10 +17,6 @@ function SearchQuery() {
     isLoading,
   } = useGetSearchResultsQuery(searchQuery || hardQuery);
 
-  console.log(searchResults);
-
-  console.log(hardQuery);
-
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -28,11 +25,12 @@ function SearchQuery() {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(searchResults.data.length);
-
   return (
     <div>
-      <h2>Search Results</h2>
+      <h1 className="font-manrope font-bold">
+        Welcome to the Job Search Platform for Developers
+      </h1>
+      <DateDisplay />
       <SearchQueryForm setSearchQuery={setSearchQuery} />
       <ul>
         {searchResults?.data?.map((result) => (

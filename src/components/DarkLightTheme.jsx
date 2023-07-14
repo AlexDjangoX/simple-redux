@@ -17,7 +17,7 @@ const DarkLightTheme = () => {
   const currentTheme = theme === 'system' ? systemTheme : theme;
 
   return (
-    <div className="align-center flex justify-center p-5">
+    <div className=" flex justify-center pr-16">
       <Image
         className="mr-2"
         src={icons.sun}
@@ -39,8 +39,8 @@ const DarkLightTheme = () => {
               setTheme(currentTheme === 'dark' ? 'light' : 'dark')
             }
           />
-          <div className="block h-6 w-11 rounded-full bg-primary dark:bg-primary" />
-          <div className="dot absolute left-1 top-1 h-4 w-4 rounded-full bg-white transition" />
+          <div className="block h-6 w-11 rounded-full bg-natural2 dark:bg-blackBG3 " />
+          <div className="dot absolute left-1 top-1 h-4 w-4 rounded-full bg-primary transition dark:bg-primary" />
         </div>
         <div className="ml-3 font-medium text-gray-700" />
       </label>
