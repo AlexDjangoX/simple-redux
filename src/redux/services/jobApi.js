@@ -1,4 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
+import { HYDRATE } from 'next-redux-wrapper';
 
 const rapidApiHost = 'jsearch.p.rapidapi.com';
 const apiKey = process.env.NEXT_PUBLIC_RAPID_API_KEY;
@@ -13,6 +14,11 @@ export const jobApi = createApi({
       return headers;
     },
   }),
+  extractRehydrationInfo(action, { reducerPath }) {
+    if (action.type === HYDRATE) {
+      return action.payload[reducerPath];
+    }
+  },
   endpoints: (builder) => ({
     getSearchResults: builder.query({
       query: (query) => `search?query=${query}`,
@@ -37,3 +43,11 @@ export const {
   useGetJobDetailsQuery,
   useGetEstimatedSalaryQuery,
 } = jobApi;
+
+// export const {
+//   useGetSearchResultsQuery,
+//   useGetSearchFiltersQuery,
+//   useGetJobDetailsQuery,
+//   useGetEstimatedSalaryQuery,
+//   usePrefetch,
+// } = jobApi.endpoints;

@@ -1,16 +1,11 @@
 import './globals.css';
-import { Dancing_Script, Manrope } from 'next/font/google';
+import { Manrope } from 'next/font/google';
 
 import Provider from './providers/Provider';
 import { ReduxProvider } from '../redux/ReduxProvider';
 import Nav from '@/components/Nav';
 
 const manrope = Manrope({
-  subsets: ['latin'],
-  weight: ['variable'],
-});
-
-const dancingScript = Dancing_Script({
   subsets: ['latin'],
   weight: ['variable'],
 });
@@ -34,3 +29,9 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
+
+// Dancing_Script,
+// const dancingScript = Dancing_Script({
+//   subsets: ['latin'],
+//   weight: ['variable'],
+// });
