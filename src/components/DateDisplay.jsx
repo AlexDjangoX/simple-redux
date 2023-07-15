@@ -12,7 +12,7 @@ const DateDisplay = () => {
   const formattedDate = date.toLocaleDateString('en-US', options);
 
   return (
-    <div className="font-sans text-[24px] font-medium text-natural6 ">
+    <div className="pb-[32px] font-sans text-[16px] font-medium text-natural6 ">
       {formattedDate}
     </div>
   );

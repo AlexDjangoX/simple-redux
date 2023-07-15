@@ -13,6 +13,7 @@ module.exports = {
         darkBG1: '#13131a',
         blackBG2: '#1c1c24',
         blackBG3: '#21212b',
+        blackPadding: '#2c2c2c',
         natural: '#f4f4f4',
         natural2: '#f1f1f5',
         natural3: '#696974',
