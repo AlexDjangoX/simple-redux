@@ -10,15 +10,28 @@ import DateDisplay from '@/components/DateDisplay';
 import Button from '@/components/Button';
 import icons from '../../public/assets/outline/index.js';
 
+import { shortenText } from '../utils/shortenText.js';
+
 function SearchQuery() {
   const [searchQuery, setSearchQuery] = useState('');
-  const hardQuery = 'Javascript developer in Texas, USA';
+  const hardQuery = 'Javascript developer in Manchester, UK';
+
+  const placeholderJobDescription = 'Unfortunately, no job description';
 
   const {
     data: searchResults,
     error,
     isLoading,
   } = useGetSearchResultsQuery(searchQuery || hardQuery);
+
+  const jobDescription = searchResults?.data[0].job_description;
+
+  const shortDescription = jobDescription
+    ? shortenText(jobDescription, 150)
+    : null;
+
+  console.log(searchResults);
+  console.log(shortDescription);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -53,13 +66,23 @@ function SearchQuery() {
             >
               <div className="flex">
                 <div className="h-[64px] w-[64px] rounded-xl ">
-                  <Image
-                    className="bg-blackPadding p-[12px]"
-                    src="/assets/logos/amazon.png"
-                    alt="No logo"
-                    width={72}
-                    height={72}
-                  />
+                  {result.employer_logo ? (
+                    <img
+                      className="bg-blackPadding p-[12px]"
+                      src={result.employer_logo}
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = '/assets/logos/amazon.png';
+                      }}
+                      alt="Logo"
+                      width={72}
+                      height={72}
+                    />
+                  ) : (
+                    <div>
+                      <div className="h-[64px] w-[64px] bg-blackBG2"></div>
+                    </div>
+                  )}
                 </div>
                 <div className="flex flex-wrap justify-center">
                   <h2>Passionate Programmer</h2>
@@ -71,11 +94,10 @@ function SearchQuery() {
                   </div>
                 </div>
               </div>
-              <p className="pt-[28px] leading-relaxed text-natural6">
-                A good programmer is someone who not only has a deep
-                understanding of computer languages and frameworks but also
-                possesses strong problem-solving skills. They have an insatiable
-                curiosity and a passion for learning new technologies.
+              <p className="min-h-[70px] pt-[28px] leading-relaxed text-natural6">
+                {result.job_description
+                  ? shortenText(result.job_description, 200)
+                  : placeholderJobDescription}
               </p>
               <div className="flex justify-between text-natural6">
                 <div className="flex  justify-between pb-[30px] pt-[20px] text-natural6 ">
